@@ -18,7 +18,7 @@ class App extends React.Component {
         ? window.location.search.split("=")[1]
         : null;
     if (!accessToken && !existingToken) {
-      window.location.replace(`https://127.0.0.1:5000`);
+      window.location.replace(`https://p-typeracer.herokuapp.com`);
     }
     
     if (accessToken) {
@@ -141,7 +141,7 @@ class App extends React.Component {
 
 
   async getUserInfo(){
-    const res = await fetch(`https://127.0.0.1:5000/getuser`, {
+    const res = await fetch(`https://p-typeracer.herokuapp.com/getuser`, {
       headers: {
         "Content-Type" : "application/json",
         "Authorization" : `Token ${this.state.token}`
@@ -155,7 +155,7 @@ class App extends React.Component {
 
 
   postScore = async (wpm, elapsed) => {
-    const resp = await fetch("https://127.0.0.1:5000/scores", {
+    const resp = await fetch("https://p-typeracer.herokuapp.com/scores", {
       method: "POST",
       headers: {
         'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ class App extends React.Component {
   };
 
   async doLogout() {
-    const res = await fetch('https://127.0.0.1:5000/logout', {
+    const res = await fetch('https://p-typeracer.herokuapp.com/logout', {
       headers : {
         "Content-Type": "application/json",
         "Authorization": `Token ${this.state.token}`
@@ -217,7 +217,7 @@ class App extends React.Component {
   };
 
   getExcerpts = async () => {
-    const response = await fetch("https://127.0.0.1:5000/excerpts");
+    const response = await fetch("https://p-typeracer.herokuapp.com/excerpts");
     const res = await response.json()
     console.log(res)
 
@@ -274,7 +274,7 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.user, 'hansol')
-    if (!this.state.user) return <a href="https://127.0.0.1:5000/login/facebook">Login with fb</a>
+    if (!this.state.user) return <a href="https://p-typeracer.herokuapp.com/login/facebook">Login with fb</a>
         return (
       <>
       <button onClick={()=>this.doLogout()}>Log Out</button>
