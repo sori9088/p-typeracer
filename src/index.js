@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-var excerpts = require('./excerpts.js');
+const excerpts = require("./excerpts.js");
 
 ReactDOM.render(<App excerpts={excerpts} />, document.getElementById('container'));
 
