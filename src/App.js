@@ -17,9 +17,7 @@ class App extends React.Component {
       window.location.search.split("=")[0] === "?api_key"
         ? window.location.search.split("=")[1]
         : null;
-    if (!accessToken && !existingToken) {
-      window.location.replace(`https://p-typeracer.herokuapp.com`);
-    }
+
     
     if (accessToken) {
       sessionStorage.setItem("token", accessToken)
