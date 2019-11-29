@@ -274,7 +274,7 @@ class App extends React.Component {
 
   render() {
     console.log(this.state.user, 'hansol')
-    if (!this.state.user) return <a href="https://p-typeracer.herokuapp.com/login/facebook">Login with fb</a>
+    if (!this.state.user) return <button type="button" class="btn btn-warning"><a href="https://p-typeracer.herokuapp.com/login/facebook">Login with facebook</a></button>
         return (
       <>
       <button onClick={()=>this.doLogout()}>Log Out</button>
